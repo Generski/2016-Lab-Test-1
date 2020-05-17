@@ -29,11 +29,23 @@ class Box
 
   void fall()
   {
+    float d = dist(x, y, p.x, p.y);
+
     if (y < height + s/2)
     {
       y += speed;
-    } else
+    } else if (y > height + s/2)
     {
+      missed ++;
+      speed = random(1, 5);
+      col = color(random(0, 255), random(0, 255), random(0, 255));
+      y = 0 - s/2;
+      x = random(s/2, width - s/2);
+    }
+
+    if (d < s/2 + pHeight/2)
+    {
+      collected ++;
       speed = random(1, 5);
       col = color(random(0, 255), random(0, 255), random(0, 255));
       y = 0 - s/2;
