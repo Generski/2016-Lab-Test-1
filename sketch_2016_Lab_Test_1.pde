@@ -17,4 +17,5 @@ void draw()
 {
   background(0);
   p.display();
+  p.move(3);
 }

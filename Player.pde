@@ -28,4 +28,19 @@ class Player
     line(x, y + headSize/2, x + w/2, y + h/2);
     line(x, y + headSize/2, x - w/2, y + h/2);
   }
+
+  void move(float speed)
+  {
+    if (keyPressed)
+    {
+      if ((key == 'a' || keyCode == LEFT) && x > pWidth/2)
+      {
+        x -= speed;
+      }
+      if ((key == 'd' || keyCode == RIGHT) && x < width - pWidth/2)
+      {
+        x += speed;
+      }
+    }
+  }
 }
