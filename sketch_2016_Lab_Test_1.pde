@@ -16,7 +16,7 @@ void setup()
   boxSize = 50;
 
   p = new Player(width/2, height - pHeight/2, pWidth, pHeight);
-  b = new Box(width/2, height/2, boxSize);
+  b = new Box(width/2, 0, boxSize);
   
 }
 
@@ -36,4 +36,5 @@ void draw()
   p.move(3);
   
   b.display();
+  b.fall();
 }
